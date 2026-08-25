@@ -232,6 +232,14 @@ Next-Gen Admission Predictor
 
 An interactive application for exploring university admission prediction using machine learning, with real-time predictions, model evaluation, and visual analytics.
 
+## 👩‍💻 Author
+
+**Sushma Boya**
+
+Developer of the **Next-Gen Admission Predictor**, an interactive machine learning application built with Streamlit and XGBoost.
+
+🔗 GitHub: [sushma-boya](https://github.com/sushma-boya)
+
 ## 📄 License
 
 This project is licensed under the MIT License.
