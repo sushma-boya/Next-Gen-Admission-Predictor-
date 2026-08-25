@@ -164,17 +164,16 @@ Next-Gen-Admission-Predictor/
 
 ## 🛠️ Technologies Used
 ```
-Technology	Purpose
-Python	Core programming language
-Streamlit	Interactive web application
+Python Core programming language
+Streamlit Interactive web application
 XGBoost	Machine learning classification
-Pandas	Data loading and manipulation
-NumPy	Numerical computation
-Scikit-learn	Model training and evaluation
-Matplotlib	Data visualization
+Pandas Data loading and manipulation
+NumPy Numerical computation
+Scikit-learn Model training and evaluation
+Matplotlib Data visualization
 Seaborn	Statistical visualization
-Plotly	Interactive visualizations
-OpenPyXL	Excel dataset handling
+Plotly Interactive visualizations
+OpenPyXL Excel dataset handling
 ```
 
 ## ⚙️ Installation
@@ -194,7 +193,8 @@ streamlit run app.py
 The application will open in your default web browser.
 
 ## 🔄 Application Workflow
-![Application Workflow](images/workflow.png)
+<img width="1536" height="1024" alt="workflow" src="https://github.com/user-attachments/assets/cf08687f-f927-41d7-8c4a-963954683905" />
+
 
 ## 🎯 How to Use
 
