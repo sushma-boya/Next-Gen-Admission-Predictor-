@@ -208,12 +208,19 @@ The application will open in your default web browser.
 ## 🎯 How to Use
 ```
 Launch the application using Streamlit.
+
 Adjust the applicant profile using the sidebar.
+
 Enter the academic and profile information.
+
 View the predicted admission probability.
+
 Explore model performance metrics.
+
 Analyze feature importance and correlations.
+
 Explore simulated university-wise probabilities.
+
 Review personalized suggestions.
 ```
 ## 📌 Important Note
@@ -227,13 +234,21 @@ It is intended for educational, exploratory, and demonstration purposes and shou
 Possible enhancements include:
 ```
 Integration with larger admission datasets
+
 Additional applicant features
+
 Comparison of multiple machine learning models
+
 Hyperparameter optimization
+
 Improved probability calibration
+
 Cloud deployment
+
 User authentication
+
 Saved applicant profiles
+
 Automated model retraining
 ```
 ## 👩‍💻 Project
