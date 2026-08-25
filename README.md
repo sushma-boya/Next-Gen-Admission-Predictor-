@@ -233,7 +233,9 @@ XGBoost Model   Test Data
            ▼
  Admission Probability
 
+
 ## 🎯 How to Use
+
 Launch the application using Streamlit.
 Adjust the applicant profile using the sidebar.
 Enter the academic and profile information.
