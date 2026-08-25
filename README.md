@@ -155,22 +155,15 @@ The dataset is loaded by the Streamlit application and used for model training a
 Next-Gen-Admission-Predictor/
 │
 ├── app.py
-│   └── Main Streamlit application
-│
 ├── dataset.xlsx
-│   └── Admission dataset used for training and evaluation
-│
 ├── requirements.txt
-│   └── Python dependencies
-│
 ├── README.md
-│   └── Project documentation
-│
 └── .gitignore
-    └── Files excluded from Git tracking
+    
 ```
 
 ## 🛠️ Technologies Used
+```
 Technology	Purpose
 Python	Core programming language
 Streamlit	Interactive web application
@@ -182,6 +175,7 @@ Matplotlib	Data visualization
 Seaborn	Statistical visualization
 Plotly	Interactive visualizations
 OpenPyXL	Excel dataset handling
+```
 
 ## ⚙️ Installation
 1. Clone the repository
@@ -200,9 +194,7 @@ streamlit run app.py
 The application will open in your default web browser.
 
 ## 🔄 Application Workflow
-
-![Uploading ef3550a9-f18d-4ae0-aea1-f1b076adfc4a.png…]()
-
+![Application Workflow](images/workflow.png)
 
 ## 🎯 How to Use
 
