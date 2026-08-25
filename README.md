@@ -1,37 +1,54 @@
 # 🎓 Next-Gen Admission Predictor
 
-A Streamlit-based machine learning web application that predicts university admission probability using an **XGBoost Classifier**.
+An interactive machine learning web application that predicts university admission chances based on an applicant's academic profile and research experience.
 
-The application provides real-time admission probability updates based on an applicant's GRE score, TOEFL score, CGPA, SOP strength, LOR strength, and research experience.
+Built with **Python, Streamlit, and XGBoost**, the application provides real-time predictions along with model performance metrics and visual analytics.
 
-## 🚀 Features
+---
 
-* 🎯 Real-time admission probability prediction
-* 📊 XGBoost classification model
-* 📈 Model performance evaluation
-* 🔥 Confusion matrix
-* 📉 ROC curve and AUC
-* 📋 Classification report
-* 📊 Feature importance analysis
-* 📈 Learning curve
-* 📊 Data distribution analysis
-* 🔗 Feature correlation heatmap
-* 🏫 University-wise admission probability simulation
-* 💡 Personalized suggestions for improving admission chances
+## ✨ Features
 
-## 🧠 Machine Learning Model
+- 🎯 Real-time university admission prediction
+- 📊 XGBoost classification model
+- 📈 Model accuracy and performance evaluation
+- 🔥 Confusion matrix visualization
+- 📉 ROC curve and AUC analysis
+- 📋 Classification report
+- 📊 XGBoost feature importance
+- 📈 Learning curve analysis
+- 📊 Feature distribution analysis
+- 🔗 Feature correlation heatmap
+- 🏫 University-wise admission probability simulation
+- 💡 Personalized suggestions based on applicant profile
+- 📋 Dataset statistics and exploration
+- 🎨 Interactive Streamlit interface
 
-The application uses an **XGBoost Classifier** trained on a synthetically generated dataset of 1,000 samples. The dataset contains:
+---
 
-* GRE Score
-* TOEFL Score
-* CGPA
-* SOP Strength
-* LOR Strength
-* Research Experience
+## 🧠 Machine Learning
 
-The data is split into **800 training samples and 200 test samples**.
-The model uses the following main parameters:
+The application uses an **XGBoost Classifier** to estimate admission outcomes from applicant profile information.
+
+### Input Features
+
+The model uses the following features:
+
+| Feature | Description |
+|---|---|
+| GRE Score | Graduate Record Examination score |
+| TOEFL Score | English language proficiency score |
+| CGPA | Undergraduate academic performance |
+| SOP Strength | Statement of Purpose rating |
+| LOR Strength | Letter of Recommendation rating |
+| Research Experience | Whether the applicant has research experience |
+| Admit | Admission outcome used as the target variable |
+
+The dataset is divided into:
+
+- **80% Training Data**
+- **20% Testing Data**
+
+### Model Parameters
 
 ```text
 n_estimators = 300
@@ -39,119 +56,201 @@ max_depth = 6
 learning_rate = 0.05
 subsample = 0.9
 colsample_bytree = 0.9
-```
 
-## 📊 Applicant Inputs
+📋 Applicant Profile
 
-| Feature             | Range    |
-| ------------------- | -------- |
-| GRE Score           | 260–340  |
-| TOEFL Score         | 80–120   |
-| CGPA                | 6.0–10.0 |
-| SOP Strength        | 1–5      |
-| LOR Strength        | 1–5      |
-| Research Experience | Yes / No |
+Users can interactively enter or adjust:
 
-## 🖥️ Application Sections
+GRE Score: 260–340
+TOEFL Score: 80–120
+CGPA: 6.0–10.0
+SOP Strength: 1–5
+LOR Strength: 1–5
+Research Experience: Yes / No
 
-### 🎯 Prediction
+The prediction updates dynamically based on the selected profile.
 
-Displays:
+📊 Model Performance
 
-* Applicant profile summary
-* Percentile ranks
-* Profile radar chart
-* Real-time admission probability
-* Admission probability gauge
-* Improvement suggestions
-* University-wise admission probability simulation
+The application provides several evaluation tools to understand model performance:
 
-### 📊 Model Performance
+Classification Metrics
+Accuracy
+Precision
+Recall
+Classification Report
+Visual Evaluation
+Confusion Matrix
+ROC Curve
+AUC Score
+Learning Curve
 
-Displays:
+These visualizations help provide a better understanding of how the model performs on unseen test data.
 
-* Accuracy
-* Precision
-* Recall
-* Confusion matrix
-* ROC curve
-* AUC
-* Classification report
+📈 Visual Analytics
 
-### 📈 Visual Analytics
+The application includes an interactive analytics section containing:
 
-Displays:
+Feature Importance
 
-* XGBoost feature importance
-* Learning curve
-* Feature distributions
-* Feature correlation heatmap
+Displays the relative contribution of each feature to the XGBoost model.
 
-### ℹ️ About
+Learning Curve
 
-Provides information about the model, dataset, features, and application usage.
+Shows model performance across different training-set sizes.
 
-## 🛠️ Technologies Used
+Feature Distributions
 
-* Python
-* Streamlit
-* NumPy
-* Pandas
-* Matplotlib
-* Seaborn
-* XGBoost
-* Scikit-learn
-* Plotly
+Explores the distribution of applicant characteristics within the dataset.
 
-## 📁 Project Structure
+Correlation Heatmap
 
-```text
-project/
+Shows relationships between the numerical features used by the model.
+
+🏫 University-wise Simulation
+
+The application also provides a simulated university-wise admission probability view.
+
+This allows users to explore how an applicant's profile may translate into different estimated admission probabilities across institutions.
+
+Note: These university-wise values are simulations generated by the application and should not be interpreted as official admission requirements or actual university decisions.
+
+📂 Project Structure
+
+Next-Gen-Admission-Predictor/
 │
 ├── app.py
+│   └── Main Streamlit application
+│
+├── dataset.xlsx
+│   └── Admission dataset used for model training and evaluation
+│
 ├── requirements.txt
+│   └── Python dependencies required to run the application
+│
 ├── README.md
+│   └── Project documentation
+│
 └── .gitignore
-```
 
-## ⚙️ Installation
+🗃️ Dataset
 
-Clone the repository:
+The project uses an external admission dataset stored locally as:
 
-```bash
-git clone <your-github-repository-url>
-```
+dataset.xlsx
 
-Navigate into the project directory:
+The dataset contains applicant information including:
 
-```bash
-cd project
-```
+GRE
+TOEFL
+CGPA
+SOP
+LOR
+Research
+Admit
 
-Install the required dependencies:
+The dataset is loaded directly by the Streamlit application and is used to train and evaluate the XGBoost model.
 
-```bash
+🛠️ Technologies Used
+Technology	Purpose
+Python	Core programming language
+Streamlit	Interactive web application
+XGBoost	Machine learning classification
+Pandas	Data loading and manipulation
+NumPy	Numerical computation
+Scikit-learn	Model training and evaluation
+Matplotlib	Data visualization
+Seaborn	Statistical visualization
+Plotly	Interactive visualizations
+OpenPyXL	Excel dataset handling
+⚙️ Installation
+1. Clone the repository
+git clone https://github.com/sushma-boya/Next-Gen-Admission-Predictor-.git
+2. Navigate to the project
+cd Next-Gen-Admission-Predictor-
+3. Install dependencies
 pip install -r requirements.txt
-```
+▶️ Run the Application
 
-## ▶️ Run the Application
+Start the Streamlit application with:
 
-Start the Streamlit application:
-
-```bash
 streamlit run app.py
-```
 
-The application will open in your browser.
+The application will open in your default web browser.
 
-## 📌 Important Note
+🔄 Application Workflow
 
-This project uses a **synthetically generated dataset** inside the application rather than an external admission dataset. The admission labels are generated using predefined criteria with a small amount of noise.
+                    ┌─────────────────────┐
+                    │    dataset.xlsx     │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │     Load Dataset    │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Data Preparation    │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Train/Test Split    │
+                    │       80 / 20       │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ XGBoost Classifier  │
+                    └──────────┬──────────┘
+                               │
+                 ┌─────────────┴─────────────┐
+                 ▼                           ▼
+       ┌──────────────────┐        ┌──────────────────┐
+       │ Model Evaluation │        │ Applicant Input  │
+       └────────┬─────────┘        └────────┬─────────┘
+                │                           │
+                ▼                           ▼
+       ┌──────────────────┐        ┌──────────────────┐
+       │ Accuracy / ROC   │        │ Admission        │
+       │ Confusion Matrix │        │ Probability      │
+       │ Feature Analysis │        │ Prediction       │
+       └──────────────────┘        └──────────────────┘
 
-Therefore, the predicted admission probabilities are intended for **educational and demonstration purposes** and should not be treated as actual university admission decisions.
+🎯 How to Use
+Launch the application using Streamlit.
+Adjust the applicant profile using the sidebar.
+Enter academic and profile information.
+View the predicted admission probability.
+Explore model performance through the analytics sections.
+Examine feature importance and correlations.
+Compare simulated university-wise admission probabilities.
+Review personalized suggestions for improving the profile.
+📌 Important Note
 
-## 👩‍💻 Project
+The admission probability generated by this application is an ML-based estimate derived from the provided dataset.
 
-**Next-Gen Admission Predictor**
+It should be used for educational, exploratory, and demonstration purposes and should not be considered an official university admission decision or guarantee.
 
-An interactive application built with Streamlit and XGBoost to explore university admission prediction through machine learning.
+🚀 Future Improvements
+
+Possible enhancements include:
+
+Integration with larger and more diverse admission datasets
+Additional applicant features
+Multiple machine learning model comparisons
+Model hyperparameter optimization
+Improved probability calibration
+Deployment to a cloud platform
+User authentication and saved applicant profiles
+Automated model retraining with updated datasets
+👩‍💻 Project
+Next-Gen Admission Predictor
+
+An interactive application for exploring university admission prediction using machine learning, with real-time predictions, model evaluation, and visual analytics.
+
+📄 License
+
+This project is licensed under the MIT License.
+    └── Files and folders excluded from Git tracking
