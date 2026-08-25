@@ -1,3 +1,4 @@
+
 # app.py
 # Next-Gen Admission Predictor with XGBoost (98% Accuracy) – Real‑time updates
 
@@ -63,7 +64,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown('<h1 class="main-header">🎓 Next-Gen Admission Predictor</h1>', unsafe_allow_html=True)
-st.markdown('<p class="sub-header">Machine Learning based University Admission Prediction using XGBoost (98% Accuracy)</p>', unsafe_allow_html=True)
+st.markdown('<p class="sub-header">Machine Learning based University Admission Prediction using XGBoost </p>', unsafe_allow_html=True)
 
 # -------------------------------------------------------------------
 # Sidebar Inputs
@@ -81,40 +82,49 @@ research = 1 if research == "Yes" else 0
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("### 📊 Model Info")
-st.sidebar.info("XGBoost Classifier with 98% accuracy on test data")
+st.sidebar.info("XGBoost Classifier with accuracy on test data")
 st.sidebar.markdown("---")
 st.sidebar.markdown("💡 **Tip:** Move the sliders to see your admission probability update in real time!")
 
+
 # -------------------------------------------------------------------
-# Generate Synthetic Dataset (Cached – runs only once)
+# Load External Dataset (Cached – runs only once)
 # -------------------------------------------------------------------
 @st.cache_data
 def load_data():
-    np.random.seed(42)
-    n_samples = 1000
-    data = pd.DataFrame({
-        "GRE": np.random.randint(260, 341, n_samples),
-        "TOEFL": np.random.randint(80, 121, n_samples),
-        "CGPA": np.round(np.random.uniform(6.0, 10.0, n_samples), 2),
-        "SOP": np.round(np.random.uniform(1, 5, n_samples), 1),
-        "LOR": np.round(np.random.uniform(1, 5, n_samples), 1),
-        "Research": np.random.randint(0, 2, n_samples)
-    })
-    
-    # ----- Relaxed thresholds for ~50% admission rate -----
-    data["Admit"] = (
-        (data["GRE"] > 300) & 
-        (data["TOEFL"] > 95) & 
-        (data["CGPA"] > 7.5) &
-        (data["SOP"] > 2.5) &
-        (data["LOR"] > 2.5) &
-        (data["Research"] == 1)
-    ).astype(int)
-    
-    # Still add a tiny bit of noise (2%) for realism
-    noise_idx = np.random.choice(len(data), size=int(0.02 * len(data)), replace=False)
-    data.loc[noise_idx, "Admit"] = 1 - data.loc[noise_idx, "Admit"]
+    data = pd.read_excel("dataset.xlsx")
     return data
+# -------------------------------------------------------------------
+
+# Generate Synthetic Dataset (Cached – runs only once)
+# -------------------------------------------------------------------
+# @st.cache_data
+# def load_data():
+#     np.random.seed(42)
+#     n_samples = 1000
+#     data = pd.DataFrame({
+#         "GRE": np.random.randint(260, 341, n_samples),
+#         "TOEFL": np.random.randint(80, 121, n_samples),
+#         "CGPA": np.round(np.random.uniform(6.0, 10.0, n_samples), 2),
+#         "SOP": np.round(np.random.uniform(1, 5, n_samples), 1),
+#         "LOR": np.round(np.random.uniform(1, 5, n_samples), 1),
+#         "Research": np.random.randint(0, 2, n_samples)
+#     })
+    
+#     # ----- Relaxed thresholds for ~50% admission rate -----
+#     data["Admit"] = (
+#         (data["GRE"] > 300) & 
+#         (data["TOEFL"] > 95) & 
+#         (data["CGPA"] > 7.5) &
+#         (data["SOP"] > 2.5) &
+#         (data["LOR"] > 2.5) &
+#         (data["Research"] == 1)
+#     ).astype(int)
+    
+#     # Still add a tiny bit of noise (2%) for realism
+#     noise_idx = np.random.choice(len(data), size=int(0.02 * len(data)), replace=False)
+#     data.loc[noise_idx, "Admit"] = 1 - data.loc[noise_idx, "Admit"]
+#     return data
 
 data = load_data()
 X = data.drop("Admit", axis=1)
@@ -455,11 +465,12 @@ with tab4:
     2. Explore the tabs to see model performance, feature importance, and data distributions.
     3. The "University-wise" simulation gives an estimate for different institutions.
     
-    #### Why 98% Accuracy?
-    - Synthetic data with strict admission rules (GRE>315, TOEFL>105, CGPA>8.5, SOP>3.5, LOR>3.5, Research=1)
-    - Only 2% label noise
-    - Optimized XGBoost parameters
+    #### Dataset
+    - The model is trained using the provided external admission dataset.
+    - The dataset contains GRE, TOEFL, CGPA, SOP, LOR, Research, and Admit fields.
+    - The data is split into 80% training and 20% testing sets.
     """)
+    
     
     st.subheader("Dataset Statistics")
     col1, col2, col3 = st.columns(3)
@@ -473,13 +484,17 @@ with tab4:
 # -------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------
+
 st.markdown("---")
+
 st.markdown(
     """
-    <div style='text-align: center'>
-        <p>Developed with ❤️ using Streamlit & XGBoost | B.Tech Final Year ML Project</p>
-        <p style='font-size: 0.8rem; color: #6B7280;'>© 2024 Next-Gen Admission Predictor</p>
+    <div style="text-align: center;">
+        <p>Developed using Streamlit & XGBoost</p>
+        <p style="font-size: 0.8rem; color: #6B7280;">
+            2025 Next-Gen Admission Predictor
+        </p>
     </div>
-    """, 
+    """,
     unsafe_allow_html=True
 )
