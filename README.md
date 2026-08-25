@@ -201,7 +201,6 @@ streamlit run app.py
 
 The application will open in your default web browser.
 
-## 🔄 Application Workflow
 <img width="1536" height="1024" alt="workflow" src="https://github.com/user-attachments/assets/cf08687f-f927-41d7-8c4a-963954683905" />
 
 
