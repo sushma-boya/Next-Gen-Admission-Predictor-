@@ -157,7 +157,7 @@ Next-Gen-Admission-Predictor/
 ├── app.py
 ├── dataset.xlsx
 ├── requirements.txt
-├── README.md
+├──README.md
 └── .gitignore
     
 ```
