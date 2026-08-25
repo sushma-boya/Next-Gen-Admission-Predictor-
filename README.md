@@ -201,37 +201,7 @@ The application will open in your default web browser.
 
 ## 🔄 Application Workflow
 
-Dataset
-   │
-   ▼
-dataset.xlsx
-   │
-   ▼
-Data Loading & Preparation
-   │
-   ▼
-Train / Test Split
-   │
-   ├───────────────┐
-   ▼               ▼
-XGBoost Model   Test Data
-   │               │
-   └───────┬───────┘
-           ▼
-    Model Evaluation
-           │
-           ├── Accuracy
-           ├── Confusion Matrix
-           ├── ROC / AUC
-           ├── Classification Report
-           └── Feature Importance
-           
-           │
-           ▼
-    Applicant Profile
-           │
-           ▼
- Admission Probability
+![Uploading ef3550a9-f18d-4ae0-aea1-f1b076adfc4a.png…]()
 
 
 ## 🎯 How to Use
