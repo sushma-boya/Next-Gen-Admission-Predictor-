@@ -262,7 +262,7 @@ Automated model retraining
 Next-Gen Admission Predictor
 
 An interactive application for exploring university admission prediction using machine learning, with real-time predictions, model evaluation, and visual analytics.
-
+q
 📄 License
 
 This project is licensed under the MIT License.
