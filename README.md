@@ -168,6 +168,7 @@ Next-Gen-Admission-Predictor/
 │
 └── .gitignore
     └── Files excluded from Git tracking
+```
 
 🛠️ Technologies Used
 Technology	Purpose
